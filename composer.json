@@ -1,0 +1,29 @@
+{
+	"name" : "bitcoin-reserve/bitcoin-reserve-php",
+	"description" : "Bitcoin Reserve PHP Library",
+	"keywords" : [
+		"bitcoin reserve",
+		"payment processing",
+		"api"
+	],
+	"homepage" : "https://bitcoinreserve.ch/",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Bitcoin Reserve and contributors",
+			"homepage" : "https://www.bitcoinreserve.ch"
+		}
+	],
+	"require" : {
+		"php" : ">=5.4",
+		"katzgrau/klogger" : "1.0.0"
+	},
+	"require-dev" : {
+		"simpletest/simpletest" : "*",
+        "sami/sami" : "1.3"
+	},
+	"autoload" : {
+		"classmap" : [
+			"lib/BitcoinReserve/"
+		]
+	}
+}

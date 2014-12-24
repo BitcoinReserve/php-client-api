@@ -1,0 +1,17 @@
+INSTALL
+=======
+
+Requirements
+------------
+
+- PHP 5.3+
+- SOAP extension
+- CURL extension for testing
+
+Install
+-------
+
+1.- Create log directory and change permissions
+
+/bitcoin-reserve-php-1.0.0/lib/Log (allow write to Apache/PHP)
+       
