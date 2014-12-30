@@ -233,13 +233,16 @@ class BitcoinReserve_PaymentService extends BitcoinReserve_Service {
 		
 		return $paymentResult;		
 	}
-	
+
 	/**
-	 * Simulates a payment. The input parameters are the same as simulatePayment(), but the result is only the payment status. 
+	 * Simulates a payment. The input parameters are the same as simulatePayment(), but the result is only the payment status.
 	 * No payment is actually performed.
 	 *
 	 * @params Array
+	 * @param $params
 	 * @return BitcoinReserve_PaymentResult
+	 * @throws BitcoinReserve_InvalidParametersError
+	 * @throws Exception
 	 */
 	public static function simulatePayment($params) {
 	
@@ -421,16 +424,12 @@ class BitcoinReserve_PaymentService extends BitcoinReserve_Service {
 			// PaymentWebStructPaymentParameters extends PaymentWebStructAbstractPaymentParameters
 		
 			// Attributes from PaymentWebStructAbstractPaymentParameters
-			$paymentWebStructPaymentParameters->setFromMemberPrincipalType('USER');
-			$paymentWebStructPaymentParameters->setFromMember(BitcoinReserve::getUsername());
-			$paymentWebStructPaymentParameters->setToMemberPrincipalType('USER');
 			$paymentWebStructPaymentParameters->setToMember($toMember);
 		
-			// Atributes from PaymentWebStructPaymentParameters
+			// Attributes from PaymentWebStructPaymentParameters
 			$paymentWebStructPaymentParameters->setAmount($amount);
 			$paymentWebStructPaymentParameters->setDescription($description);
-			$paymentWebStructPaymentParameters->setCurrency($currency);
-			$paymentWebStructPaymentParameters->setCredentials($transactionPwd);
+			$paymentWebStructPaymentParameters->setTransactionPwd($transactionPwd);
 		
 			unset($paymentWebStructPaymentParameters->customValues);
 			unset($paymentWebStructPaymentParameters->fromMemberFieldsToReturn);
