@@ -1,5 +1,5 @@
-Bitcoin Reserve Java SOAP Client
-================================
+Bitcoin Reserve PHP SOAP Client
+===============================
 
 This software enables your application to send SOAP messages to Bitcoin Reserve and receive responses. 
 It requires credentials for an active BitcoinReserve.ch Business Account obtainable through the [website](https://bitcoinreserve.ch).  
